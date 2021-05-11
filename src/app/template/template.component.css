@@ -1,12 +1,12 @@
 .corpo {
     margin-top: 4vh;
-    height: 80vh;
+    /* height: 80vh; */
     width: 45vw;
-    padding-left: 3vw;
+    padding-left: 1.7vw;
     padding-right: 3vw;
-    padding-top: 2vh;
+    /* padding-top: 2vh; */
     padding-bottom: 2vh;
-    border: 0.4vh solid rgb(42, 42, 53);
+    /* border: 0.4vh solid rgb(42, 42, 53); */
     overflow-y: auto;
 }
 
