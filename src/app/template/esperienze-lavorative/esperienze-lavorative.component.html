@@ -1,0 +1,16 @@
+<h4>Esperienze Lavorative</h4>
+<div class="componente rounded">
+    <div class="row" *ngFor="let esp of esperienze; let i = index">
+        <div class="col-md-3">
+            <h5 class="date" *ngIf="!isAttuale(i)">Inizio: {{esp.dataInizio | date: "dd/MM/yyyy"}}
+                Fine: {{esp.dataFine | date: "dd/MM/yyyy"}}</h5>
+            <h5 class="date" *ngIf="isAttuale(i)">Inizio: {{esp.dataInizio | date: "dd/MM/yyyy"}} <br>
+                {{esp.dataFine}}</h5>
+        </div>
+        <div class="col-md-8">
+            <h4>{{esp.titolo}}</h4>
+            <p>{{esp.datoreLavoro}}</p>
+            <h5>{{esp.descrizione}}</h5>
+        </div>
+    </div>
+</div>

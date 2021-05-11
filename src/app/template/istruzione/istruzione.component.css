@@ -1,0 +1,21 @@
+
+.componente {
+    padding: 1%;
+    border: 0.3vh solid rgb(28, 28, 121);
+}
+
+.date {
+    padding: 0.7vh;
+}
+
+h1 {
+    font-size: 4vw;
+}
+
+h5 {
+    font-size: 0.9vw;
+}
+
+h4 {
+    font-size: 1.5vw;
+}

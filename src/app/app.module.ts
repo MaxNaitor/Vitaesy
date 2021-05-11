@@ -7,13 +7,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TemplateComponent } from './template/template.component';
 import { InfopersonaliComponent } from './template/infopersonali/infopersonali.component';
+import { EsperienzeLavorativeComponent } from './template/esperienze-lavorative/esperienze-lavorative.component';
+import { IstruzioneComponent } from './template/istruzione/istruzione.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     TemplateComponent,
-    InfopersonaliComponent
+    InfopersonaliComponent,
+    EsperienzeLavorativeComponent,
+    IstruzioneComponent
   ],
   imports: [
     BrowserModule,
