@@ -1,0 +1,8 @@
+.row {
+    position: fixed;
+    width: 50%;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}

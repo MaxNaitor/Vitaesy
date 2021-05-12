@@ -1,1 +1,54 @@
-<h1>ciao</h1>
+<div class="row">
+    <div class="col-md-10">
+        <h1>Info Personali</h1>
+        <form [formGroup]="infoForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="nome">Foto</label>
+                <input type="file" accept="image/*" class="form-control" (change)="mostraImg($event)">
+            </div>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" formControlName="nome">
+                <span *ngIf="!infoForm.get('nome').valid && infoForm.get('nome').touched">Inserisci il tuo nome!</span>
+            </div>
+            <div class="form-group">
+                <label for="cognome">Cognome</label>
+                <input type="text" class="form-control" formControlName="cognome">
+                <span *ngIf="!infoForm.get('cognome').valid && infoForm.get('cognome').touched">Inserisci il tuo
+                    cognome!</span>
+            </div>
+            <div class="form-group">
+                <label for="data">Data di nascita</label>
+                <input type="date" class="form-control" formControlName="dataNascita">
+                <span *ngIf="!infoForm.get('dataNascita').valid && infoForm.get('dataNascita').touched">Inserisci la tua
+                    data di nascita!</span>
+            </div>
+            <div class="form-group">
+                <label for="nome">Indirizzo</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" formControlName="indirizzo" style="width: 80%;">
+                    <input type="number" class="form-control" formControlName="civico" placeholder="n°">
+                    <span *ngIf="!infoForm.get('indirizzo').valid && infoForm.get('indirizzo').touched">Inserisci il tuo
+                        indirizzo!
+                        <span *ngIf="!infoForm.get('civico').valid && infoForm.get('civico').touched">Inserisci il
+                            civico!</span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Telefono</label>
+                <input type="text" class="form-control" formControlName="telefono">
+                <span *ngIf="!infoForm.get('telefono').valid && infoForm.get('telefono').touched">Inserisci il tuo
+                    numero di telefono!</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" formControlName="email" placeholder="esempio@esempio.com">
+                <span *ngIf="!infoForm.get('email').valid && infoForm.get('email').touched">Inserisci il tuo indirizzo
+                    email!</span>
+            </div>
+            <button class="btn btn-primary" type="submit"
+                [disabled]="!infoForm.valid || !imgInserita">Inserisci</button>
+        </form>
+    </div>
+</div>

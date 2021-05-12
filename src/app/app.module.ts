@@ -14,6 +14,10 @@ import { TrattamentoDatiComponent } from './template/trattamento-dati/trattament
 import { InfoFormComponent } from './forms/info-form/info-form.component';
 import { HomeComponent } from './home/home.component';
 import { DescrizioneComponent } from './home/descrizione/descrizione.component';
+import { EsperienzeFormComponent } from './forms/esperienze-form/esperienze-form.component';
+import { IstruzioneFormComponent } from './forms/istruzione-form/istruzione-form.component';
+import { CompetenzeFormComponent } from './forms/competenze-form/competenze-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,11 +32,15 @@ import { DescrizioneComponent } from './home/descrizione/descrizione.component';
     InfoFormComponent,
     HomeComponent,
     DescrizioneComponent,
+    EsperienzeFormComponent,
+    IstruzioneFormComponent,
+    CompetenzeFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

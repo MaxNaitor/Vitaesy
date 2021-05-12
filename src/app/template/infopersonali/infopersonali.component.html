@@ -1,13 +1,13 @@
 <h4>Info Personali</h4>
 <div class="row componente rounded">
     <div class="col-md-4">
-        <img src="/assets/foto.jpg" alt="" class="foto rounded-circle">
+        <img [src]="imageURL" alt="" class="foto rounded-circle">
     </div>
     <div class="col-md-8">
-        <h1>{{nome}} {{cognome}}</h1>
-        <h5>Data di nascita: {{dataDiNascita | date: "dd/MM/yyyy"}}</h5>
-        <h5>Indirizzo: {{indirizzo}} {{civico}}</h5>
-        <h5>Telefono: {{telefono}}</h5>
-        <h5>Email: {{email}}</h5>
+        <h1>{{infoUtente.nome}} {{infoUtente.cognome}}</h1>
+        <h5>Data di nascita: {{infoUtente.dataDiNascita | date: "dd/MM/yyyy"}}</h5>
+        <h5>Indirizzo: {{infoUtente.indirizzo}} {{infoUtente.civico}}</h5>
+        <h5>Telefono: {{infoUtente.telefono}}</h5>
+        <h5>Email: {{infoUtente.email}}</h5>
     </div>
 </div>

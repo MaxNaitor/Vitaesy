@@ -3,6 +3,8 @@
    height: 18vh;
    margin-left: 1.5vw;
    margin-top: 1.2vh;
+   object-fit: cover;
+   object-position: 100% 0;
 }
 
 .componente {
