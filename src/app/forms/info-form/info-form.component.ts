@@ -26,7 +26,7 @@ export class InfoFormComponent implements OnInit {
       'cognome': new FormControl(null, Validators.required),
       'dataNascita': new FormControl(null, Validators.required),
       'indirizzo': new FormControl(null, Validators.required),
-      'civico': new FormControl(null, Validators.required),
+      'civico': new FormControl(null, [Validators.required, this.civicoValidator.bind(this)]),
       'telefono': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.email]),
     })
@@ -54,5 +54,12 @@ export class InfoFormComponent implements OnInit {
       'email': this.infoForm.get('email').value,
     }
     this.infoService.inserisciInfo(info)
+  }
+
+  civicoValidator(control: FormControl): { [s: string]: boolean } {
+    if (control.value <= 0) {
+      return { isCivicoInvalid: true }
+    }
+    return null
   }
 }
