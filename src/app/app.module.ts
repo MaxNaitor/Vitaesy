@@ -10,6 +10,10 @@ import { InfopersonaliComponent } from './template/infopersonali/infopersonali.c
 import { EsperienzeLavorativeComponent } from './template/esperienze-lavorative/esperienze-lavorative.component';
 import { IstruzioneComponent } from './template/istruzione/istruzione.component';
 import { CompetenzePersonaliComponent } from './template/competenze-personali/competenze-personali.component';
+import { TrattamentoDatiComponent } from './template/trattamento-dati/trattamento-dati.component';
+import { InfoFormComponent } from './forms/info-form/info-form.component';
+import { HomeComponent } from './home/home.component';
+import { DescrizioneComponent } from './home/descrizione/descrizione.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { CompetenzePersonaliComponent } from './template/competenze-personali/co
     InfopersonaliComponent,
     EsperienzeLavorativeComponent,
     IstruzioneComponent,
-    CompetenzePersonaliComponent
+    CompetenzePersonaliComponent,
+    TrattamentoDatiComponent,
+    InfoFormComponent,
+    HomeComponent,
+    DescrizioneComponent,
   ],
   imports: [
     BrowserModule,
