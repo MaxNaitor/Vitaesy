@@ -9,6 +9,7 @@ import { TemplateComponent } from './template/template.component';
 import { InfopersonaliComponent } from './template/infopersonali/infopersonali.component';
 import { EsperienzeLavorativeComponent } from './template/esperienze-lavorative/esperienze-lavorative.component';
 import { IstruzioneComponent } from './template/istruzione/istruzione.component';
+import { CompetenzePersonaliComponent } from './template/competenze-personali/competenze-personali.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { IstruzioneComponent } from './template/istruzione/istruzione.component'
     TemplateComponent,
     InfopersonaliComponent,
     EsperienzeLavorativeComponent,
-    IstruzioneComponent
+    IstruzioneComponent,
+    CompetenzePersonaliComponent
   ],
   imports: [
     BrowserModule,

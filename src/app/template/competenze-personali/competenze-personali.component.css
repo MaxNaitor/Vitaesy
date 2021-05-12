@@ -1,0 +1,21 @@
+ 
+ .componente {
+     padding: 1%;
+     border: 0.3vh solid rgb(28, 28, 121);
+ }
+ 
+ p {
+     font-size: 0.8vw;
+ }
+
+ h1 {
+     font-size: 4vh;
+ }
+ 
+ h5 {
+     font-size: 2vh;
+ }
+ 
+ h4 {
+     font-size: 3vh;
+ }

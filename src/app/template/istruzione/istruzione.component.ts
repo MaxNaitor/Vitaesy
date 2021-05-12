@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { EsperienzaLavorativa } from '../esperienze-lavorative/esperienzaLavorativa.model';
 import { Istruzione } from './istruzione.model';
 
 @Component({

@@ -4,8 +4,12 @@
     border: 0.3vh solid rgb(28, 28, 121);
 }
 
+p {
+    font-size: 0.8vw;
+}
+
 .date {
-    padding: 0.7vh;
+    padding-left: 0.7vw;
 }
 
 h1 {
