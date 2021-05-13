@@ -26,7 +26,7 @@ export class InfoFormComponent implements OnInit {
       'cognome': new FormControl(null, Validators.required),
       'dataNascita': new FormControl(null, Validators.required),
       'indirizzo': new FormControl(null, Validators.required),
-      'civico': new FormControl(null, [Validators.required, this.civicoValidator.bind(this)]),
+      'civico': new FormControl(null, [Validators.required,this.civicoValidator.bind(this)]),
       'telefono': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.email]),
     })
@@ -34,6 +34,7 @@ export class InfoFormComponent implements OnInit {
 
   mostraImg(event) {
     this.imgInserita = true
+    console.log(this.imgInserita)
     const file = (event.target as HTMLInputElement).files[0];
     this.uploadForm.patchValue({
       avatar: file
@@ -61,5 +62,9 @@ export class InfoFormComponent implements OnInit {
       return { isCivicoInvalid: true }
     }
     return null
+  }
+
+  mostraForm() {
+    console.log(this.infoForm)
   }
 }

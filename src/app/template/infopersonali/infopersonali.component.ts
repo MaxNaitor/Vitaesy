@@ -32,7 +32,6 @@ export class InfopersonaliComponent implements OnInit {
       const reader = new FileReader();
       reader.onload = () => {
         this.imageURL = reader.result as string;
-        console.log(this.imageURL)
       }
       reader.readAsDataURL(img)
     })
