@@ -16,9 +16,9 @@ export class TemplateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  generatePdf(nome:string,cognome:string) {
+  generatePdf(nome: string, cognome: string) {
     let data = document.getElementById('cv');
-    html2canvas(data, { allowTaint: false }).then(canvas => {
+    html2canvas(data, { allowTaint: true }).then(canvas => {
       let HTML_Width = canvas.width;
       let HTML_Height = canvas.height;
       let top_left_margin = 15;

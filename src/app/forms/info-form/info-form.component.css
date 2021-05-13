@@ -1,6 +1,13 @@
 .row {
     position: fixed;
-    width: 50%;
+    width: 40%;
+    height: 85vh;
+    overflow-y: auto;
+}
+
+form  {
+    
+    height: 50vh;
 }
 
 input.ng-invalid.ng-touched {

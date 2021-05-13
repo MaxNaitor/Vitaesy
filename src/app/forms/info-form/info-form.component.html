@@ -47,10 +47,8 @@
                 <span *ngIf="!infoForm.get('email').valid && infoForm.get('email').touched">Inserisci il tuo indirizzo
                     email!</span>
             </div>
-            <h1>{{infoForm.valid}}</h1>
             <button class="btn btn-primary" type="submit"
                 [disabled]="!infoForm.valid || !imgInserita">Inserisci</button>
-            <button type="button" (click)="mostraForm()">form</button>
         </form>
     </div>
 </div>
