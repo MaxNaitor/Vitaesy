@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
@@ -11,12 +11,19 @@ export class TemplateComponent implements OnInit {
 
   @ViewChild('cv') cv: ElementRef;
 
-  constructor() { }
+  @Output('no-scroll') noScroll = new EventEmitter<string>();
+
+  constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit(): void {
   }
 
+  noScrollMetoo() {
+    alert('lanciato')
+  }
+
   generatePdf(nome: string, cognome: string) {
+    this.renderer.removeStyle(this.cv.nativeElement, 'height')
     let data = document.getElementById('cv');
     html2canvas(data, { allowTaint: true }).then(canvas => {
       let HTML_Width = canvas.width;
@@ -37,6 +44,8 @@ export class TemplateComponent implements OnInit {
       }
       pdf.save('CV ' + nome + ' ' + cognome + '.pdf');
     });
+    this.renderer.setStyle(this.cv.nativeElement, 'heigth','80vh')
+    
   }
 
 }
