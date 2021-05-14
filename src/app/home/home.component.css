@@ -1,0 +1,23 @@
+.col-md-12 {
+    display: grid;
+    grid-template-columns: 10vw auto 10vw;
+    grid-template-rows: 10vw auto 10vw;
+}
+
+.titolo {
+    grid-column: 2;
+    grid-row: 1;
+    margin: auto auto;
+}
+
+.corpo {
+    grid-column: 2;
+    grid-row: 2;
+    margin: auto auto;
+}
+
+.coda {
+    grid-column: 2;
+    grid-row: 3;
+    margin: auto auto;
+}

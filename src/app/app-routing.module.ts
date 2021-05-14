@@ -9,8 +9,12 @@ import { HomeComponent } from './home/home.component';
 import { RiempimentoComponent } from './riempimento/riempimento.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: "/home", pathMatch: 'full' },
-  { path: 'home', component: HomeComponent},
+  { path: '', redirectTo: "/home/nuovo", pathMatch: 'full' },
+  {
+    path: 'home/:stato', component: HomeComponent, children: [
+      // { path: ':stato', component: HomeComponent }
+    ]
+  },
   {
     path: 'riempimento', component: RiempimentoComponent, children: [
       { path: '', component: DescrizioneComponent, pathMatch: 'full' },
@@ -19,7 +23,8 @@ const routes: Routes = [
       { path: 'istruzione', component: IstruzioneFormComponent },
       { path: 'competenze', component: CompetenzeFormComponent },
     ]
-  }
+  },
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

@@ -1,8 +1,11 @@
 .row {
-    position: fixed;
-    width: 40%;
-    height: 85vh;
+    height: 83vh;
     overflow-y: auto;
+    background-color: white;
+    border-radius: 15%;
+    width: 80vh;
+    padding: 5%;
+    margin-top:-2vh;
 }
 
 form  {

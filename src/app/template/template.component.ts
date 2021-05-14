@@ -45,7 +45,7 @@ export class TemplateComponent implements OnInit {
       }
       pdf.save('CV ' + nome + ' ' + cognome + '.pdf');
     });
-    this.router.navigate(['/home'])
+    this.router.navigate(['/home','completato'])
     
   }
 

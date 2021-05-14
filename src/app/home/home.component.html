@@ -1,3 +1,20 @@
-<div class="row no-gutters">
-<h1>home</h1>
+<div class="row no-gutters" *ngIf="stato === 'nuovo'">
+    <div class="col-md-12">
+        <h1 class="titolo">Benvenuto su VitaEsy!</h1>
+        <h3 class="corpo">Hai bisogno di aggiornare il tuo CV in modo facile e veloce?</h3>
+        <h3 class="coda">Sei nel posto giusto!</h3>
+    </div>
+    <div class="col-md-12">
+        <button class="btn btn-success titolo" (click)="compila()">Compila ora il tuo CV</button>
+    </div>
+</div>
+<div class="row no-gutters" *ngIf="stato === 'completato'">
+    <div class="col-md-12">
+        <h1 class="titolo">Hai completato il tuo CV!</h1>
+        <h3 class="corpo">Hai bisogno di compilarne un altro?</h3>
+        <h3 class="coda">In tal caso,ricominciamo!</h3>
+    </div>
+    <div class="col-md-12">
+        <button class="btn btn-success titolo" (click)="compila()">Compila ora il tuo CV</button>
+    </div>
 </div>
