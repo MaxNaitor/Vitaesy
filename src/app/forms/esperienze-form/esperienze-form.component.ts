@@ -14,54 +14,79 @@ export class EsperienzeFormComponent implements OnInit {
     'esperienze': new FormArray([])
   })
 
-  adOggiCheck = false;
+  adOggiCheck: boolean[] = [];
 
   constructor(private esperienzeService: EsperienzeService) { }
 
   ngOnInit(): void {
+    for (let esp of this.esperienzeService.esperienze) {
+      this.aggiungiEsperienza(esp.titolo, esp.datoreLavoro, esp.descrizione, esp.dataInizio, esp.dataFine)
+    }
   }
 
 
-  aggiungiEsperienza() {
+  aggiungiEsperienza(titolo: string, datoreLavoro: string, descrizione: string, dataInizio: Date, dataFine: Date | string) {
     (<FormArray>this.esperienzeForm.get('esperienze')).push(new FormGroup({
-      'titolo': new FormControl(null, Validators.required),
-      'datoreLavoro': new FormControl(null, Validators.required),
-      'descrizione': new FormControl(null, Validators.required),
-      'dataInizio': new FormControl(null, Validators.required),
-      'dataFine': new FormControl(null)
+      'titolo': new FormControl(titolo, Validators.required),
+      'datoreLavoro': new FormControl(datoreLavoro, Validators.required),
+      'descrizione': new FormControl(descrizione, Validators.required),
+      'dataInizio': new FormControl(dataInizio, Validators.required),
+      'dataFine': new FormControl(dataFine)
     }))
+    this.adOggiCheck.push(false)
   }
 
   eliminaEsperienza(id: number) {
-    (<FormArray>this.esperienzeForm.get('esperienze')).removeAt(id)
-    this.esperienzeService.eliminaEsperienza(id)
+    (<FormArray>this.esperienzeForm.get('esperienze')).removeAt(id);
+    this.esperienzeService.eliminaEsperienza(id);
+  }
+
+  eliminaTutte() {
+    for (let i = this.getEsperienze().length - 1; i >= 0; i--) {
+      this.esperienzeService.eliminaEsperienza(i);
+    }
+    (<FormArray>this.esperienzeForm.get('esperienze')).clear()
   }
 
   resettaForm(id: number) {
-    (<FormArray>this.esperienzeForm.get('esperienze')).reset(id)
+    (<FormArray>this.esperienzeForm.get('esperienze')).controls[id].reset()
   }
 
   getEsperienze() {
     return (<FormArray>this.esperienzeForm.get('esperienze')).controls
   }
 
-  adOggi() {
-    this.adOggiCheck = !this.adOggiCheck;
-    (<FormArray>this.esperienzeForm.get('esperienze')).controls[0].get('dataFine').reset()
+  adOggi(id: number) {
+    this.adOggiCheck[id] = !this.adOggiCheck[id];
+    this.getEsperienze()[id].get('dataFine').reset()
   }
 
-  onDataFineChange() {
-    this.adOggiCheck = false;
+  onDataFineChange(id: number) {
+    this.adOggiCheck[id] = false;
   }
 
   onSubmit() {
-    let esperienze: EsperienzaLavorativa[] = (<FormArray>this.esperienzeForm.get('esperienze')).value;
+    let validForms = new FormArray([]);
+    for (let control of this.getEsperienze()) {
+      if (control.valid) {
+        validForms.push(control)
+      }
+    }
+    if (validForms.length === 0) {
+      alert('Impossibile inviare!\n' +
+        'Hai compilato tutti i campi? ')
+    }
+    let esperienze: EsperienzaLavorativa[] = (<FormArray>validForms).value;
     for (let esp of esperienze) {
       if (esp.dataFine == null) {
         esp.dataFine = 'Ad oggi'
       }
     }
     this.esperienzeService.inviaEsperienze(esperienze)
+  }
+
+  inviaSingola(id: number) {
+    this.esperienzeService.inviaEsperienze([this.getEsperienze()[id].value])
   }
 
 }

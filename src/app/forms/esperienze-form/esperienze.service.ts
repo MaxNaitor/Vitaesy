@@ -7,16 +7,38 @@ import { EsperienzaLavorativa } from 'src/app/template/esperienze-lavorative/esp
 })
 export class EsperienzeService {
 
-  submitEsperienze = new Subject<EsperienzaLavorativa[]>()
-  eliminaEsperienze = new Subject<number>()
+  esperienze: EsperienzaLavorativa[] = [
+    {
+      dataInizio: new Date(),
+      dataFine: 'Ad oggi',
+      titolo: 'Esperienza 1',
+      datoreLavoro: 'Datore 1',
+      descrizione: 'Descrizione 1'
+    },
+    {
+      dataInizio: new Date(),
+      dataFine: new Date(),
+      titolo: 'Esperienza 2',
+      datoreLavoro: 'Datore 2',
+      descrizione: 'Descrizione 2'
+    },
+  ]
+
+  // submitEsperienze = new Subject<EsperienzaLavorativa[]>()
+  // eliminaEsperienze = new Subject<number>()
+  aggiornaEsperienze = new Subject<EsperienzaLavorativa[]>()
 
   constructor() { }
 
   inviaEsperienze(esperienze: EsperienzaLavorativa[]) {
-    this.submitEsperienze.next(esperienze)
+    this.esperienze = esperienze
+    // this.submitEsperienze.next(esperienze)
+    this.aggiornaEsperienze.next(this.esperienze)
   }
   
   eliminaEsperienza(id: number) {
-    this.eliminaEsperienze.next(id)
+    this.esperienze.splice(id,1)
+    // this.eliminaEsperienze.next(id)
+    this.aggiornaEsperienze.next(this.esperienze)
   }
 }

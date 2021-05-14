@@ -1,9 +1,16 @@
 .corpo {
-    margin-top: 4vh;
+    margin-top: 1vh;
     width: 45vw;
     padding-left: 1.5vw;
     padding-right: 3vw;
     padding-bottom: 2vh;
     overflow-y: auto;
+}
+
+button {
+    margin-left: 40vw;
+    z-index: 1;
+    position: sticky;
+    top: 0;
 }
 
