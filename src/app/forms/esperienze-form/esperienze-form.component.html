@@ -1,1 +1,52 @@
-<p>esperienze-form works!</p>
+<div class="row">
+    <div class="col-md-12">
+        <h1>Esperienze Lavorative</h1>
+        <button class="btn btn-primary" (click)="aggiungiEsperienza()">Aggiungi Esperienza</button>
+        <form [formGroup]="esperienzeForm" (ngSubmit)="onSubmit()">
+            <div formArrayName="esperienze">
+                <div *ngFor="let esperienza of getEsperienze(); let i = index" [formGroupName]="i" class="f-group">
+                    <div class="form-group">
+                        <label for="titolo">Esperienza</label>
+                        <input type="text" class="form-control" formControlName="titolo" >
+                    </div>
+                    <div class="form-group">
+                        <label for="datoreLavoro">Datore di Lavoro</label>
+                        <input type="text" class="form-control" formControlName="datoreLavoro">
+                    </div>
+                    <div class="form-group">
+                        <label for="desc">Descrizione</label>
+                        <textarea class="form-control" rows="3" formControlName="descrizione"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataIn">Data di Inizio</label>
+                        <input type="date" class="form-control" formControlName="dataInizio">
+                    </div>
+                    <div class="form-group">
+                        <label for="dataFin">Data di Fine</label>
+                        <input type="date" class="form-control" formControlName="dataFine" (change)="onDataFineChange()">
+                    </div>
+                    <div class="form-group form-check">
+                        <label>Lavoro ancora qui</label>
+                        <input type="checkbox" (click)="adOggi()" class="form-check-input" style="margin-left: 0.5vw;" [checked]="adOggiCheck">
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <button class="btn btn-success centered">Invia</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-secondary centered" type="button" (click)="resettaForm(i)">Svuota</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-danger centered" type="button" (click)="eliminaEsperienza(i)">Elimina</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- <ng-template #aggiungi>
+            <div class="aggiungi-esp">
+                <h1 class="centered">Aggiungi un'esperienza!</h1>
+            </div>
+        </ng-template> -->
+    </div>
+</div>

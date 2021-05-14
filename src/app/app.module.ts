@@ -18,6 +18,7 @@ import { EsperienzeFormComponent } from './forms/esperienze-form/esperienze-form
 import { IstruzioneFormComponent } from './forms/istruzione-form/istruzione-form.component';
 import { CompetenzeFormComponent } from './forms/competenze-form/competenze-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RiempimentoComponent } from './riempimento/riempimento.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     EsperienzeFormComponent,
     IstruzioneFormComponent,
     CompetenzeFormComponent,
+    RiempimentoComponent,
   ],
   imports: [
     BrowserModule,

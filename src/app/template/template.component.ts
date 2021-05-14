@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
@@ -13,7 +14,7 @@ export class TemplateComponent implements OnInit {
 
   @Output('no-scroll') noScroll = new EventEmitter<string>();
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
+  constructor(private elementRef: ElementRef, private renderer: Renderer2, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -44,7 +45,7 @@ export class TemplateComponent implements OnInit {
       }
       pdf.save('CV ' + nome + ' ' + cognome + '.pdf');
     });
-    this.renderer.setStyle(this.cv.nativeElement, 'heigth','80vh')
+    this.router.navigate(['/home'])
     
   }
 

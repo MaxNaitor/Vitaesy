@@ -1,18 +1,20 @@
-<h4>Esperienze Lavorative</h4>
-<div class="componente rounded">
-    <div class="row" *ngFor="let esp of esperienze; let i = index">
-        <div class="col-md-3">
-            <h5>Inizio: </h5>
-            <p>{{esp.dataInizio | date: "dd/MM/yyyy"}}</p>
-            <h5>Fine:</h5>
-            <p *ngIf="!isAttuale(i)">{{esp.dataFine | date: "dd/MM/yyyy"}}</p>
-            <p *ngIf="isAttuale(i)">{{esp.dataFine}}</p>
+<div *ngIf="esperienze.length > 0">
+    <h4>Esperienze Lavorative</h4>
+    <div class="componente rounded">
+        <div class="row" *ngFor="let esp of esperienze; let i = index">
+            <div class="col-md-3">
+                <h5>Inizio: </h5>
+                <p>{{esp.dataInizio | date: "dd/MM/yyyy"}}</p>
+                <h5>Fine:</h5>
+                <p *ngIf="!isAttuale(i)">{{esp.dataFine | date: "dd/MM/yyyy"}}</p>
+                <p *ngIf="isAttuale(i)">{{esp.dataFine}}</p>
+            </div>
+            <div class="col-md-8">
+                <h4>{{esp.titolo}}</h4>
+                <p>{{esp.datoreLavoro}}</p>
+                <h5>{{esp.descrizione}}</h5>
+            </div>
+            <hr style="width: 35.5vw; margin-left: 2vw;">
         </div>
-        <div class="col-md-8">
-            <h4>{{esp.titolo}}</h4>
-            <p>{{esp.datoreLavoro}}</p>
-            <h5>{{esp.descrizione}}</h5>
-        </div>
-        <hr style="width: 35.5vw; margin-left: 2vw;">
     </div>
 </div>

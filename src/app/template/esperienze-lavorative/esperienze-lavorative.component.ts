@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EsperienzeService } from 'src/app/forms/esperienze-form/esperienze.service';
 import { EsperienzaLavorativa } from './esperienzaLavorativa.model';
 
 @Component({
@@ -24,9 +25,17 @@ export class EsperienzeLavorativeComponent implements OnInit {
       descrizione: 'Descrizione 2'
     },
   ]
-  constructor() { }
+
+  constructor(private esperienzeService: EsperienzeService) { }
 
   ngOnInit(): void {
+    this.esperienzeService.submitEsperienze.subscribe((esperienze: EsperienzaLavorativa[]) => {
+      console.log(esperienze)
+      this.esperienze = esperienze
+    })
+    this.esperienzeService.eliminaEsperienze.subscribe((id: number) => {
+      this.esperienze.splice(id,1)
+    })
   }
 
   isAttuale(idEsperienza: number) {

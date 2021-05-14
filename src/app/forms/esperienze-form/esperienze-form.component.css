@@ -1,0 +1,35 @@
+
+.f-group {
+    margin-top: 3vh;
+    border: 1px solid darkblue;
+    padding: 5%;
+    border-radius: 15%;
+}
+
+.col-md-12 {
+    height: 82vh;
+    width: 100vw;
+    overflow-y: auto;
+}
+
+.col-md-4 {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 25% 50% 25%;
+    height: 8vh;
+}
+
+.aggiungi-esp {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 25% 50% 25%;
+}
+
+.centered {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
