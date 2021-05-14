@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IstruzioneService } from 'src/app/forms/istruzione-form/istruzione.service';
 import { Istruzione } from './istruzione.model';
 
 @Component({
@@ -8,28 +9,18 @@ import { Istruzione } from './istruzione.model';
 })
 export class IstruzioneComponent implements OnInit {
 
-  esperienze: Istruzione[] = [
-    {
-      dataInizio: new Date(),
-      dataFine: 'Ad oggi',
-      titolo: 'Istruzione 1',
-      presso: 'Presso 1',
-      descrizione: 'Descrizione 1'
-    },
-    {
-      dataInizio: new Date(),
-      dataFine: new Date(),
-      titolo: 'Istruzione 2',
-      presso: 'Presso 2',
-      descrizione: 'Descrizione 2'
-    },
-  ]
-  constructor() { }
+  istruzione: Istruzione[]
+
+  constructor(private istruzioneService: IstruzioneService) { }
 
   ngOnInit(): void {
+    this.istruzione = this.istruzioneService.istruzioni
+    this.istruzioneService.aggiornaIstruzione.subscribe((ist: Istruzione[]) => {
+      this.istruzione = ist
+    })
   }
 
   isAttuale(idEsperienza: number) {
-    return typeof this.esperienze[idEsperienza].dataFine === 'string'
+    return typeof this.istruzione[idEsperienza].dataFine === 'string'
   }
 }

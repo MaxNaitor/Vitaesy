@@ -24,21 +24,17 @@ export class EsperienzeService {
     },
   ]
 
-  // submitEsperienze = new Subject<EsperienzaLavorativa[]>()
-  // eliminaEsperienze = new Subject<number>()
   aggiornaEsperienze = new Subject<EsperienzaLavorativa[]>()
 
   constructor() { }
 
   inviaEsperienze(esperienze: EsperienzaLavorativa[]) {
     this.esperienze = esperienze
-    // this.submitEsperienze.next(esperienze)
     this.aggiornaEsperienze.next(this.esperienze)
   }
   
   eliminaEsperienza(id: number) {
     this.esperienze.splice(id,1)
-    // this.eliminaEsperienze.next(id)
     this.aggiornaEsperienze.next(this.esperienze)
   }
 }

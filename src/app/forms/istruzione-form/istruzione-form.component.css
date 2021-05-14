@@ -1,0 +1,43 @@
+
+.f-group {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    border: 2px solid darkblue;
+    padding: 4vw;
+    border-radius: 15%;
+}
+
+.col-md-11 {
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.col-md-4 {
+    display: grid;
+    grid-template-columns: 0.5vw auto 0.5vw;
+    grid-template-rows: 0.5vw auto 0.5vw;
+    height: 1vh;
+}
+
+.centered {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.destra {
+    color: red;
+    margin-left: 2vw;
+}

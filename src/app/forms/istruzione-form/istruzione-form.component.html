@@ -1,1 +1,84 @@
-<p>istruzione-form works!</p>
+<div class="row">
+    <div class="col-md-11">
+        <h1>Istruzione e Formazione</h1>
+        <form [formGroup]="istruzioniForm" (ngSubmit)="onSubmit()">
+            <div class="pulsantiera row sticky bg-white" style="height: 4.3vw;">
+                <div class="col-md-4">
+                    <button class="btn btn-primary centered" type="button"
+                        (click)="aggiungiIstruzione(null,null,null,null,null)">Aggiungi</button>
+                </div>
+                <div class="col-md-4" *ngIf="getIstruzioni().length > 1">
+                    <button class="btn btn-success centered" type="submit">Invia Tutte</button>
+                </div>
+                <div class="col-md-4" *ngIf="getIstruzioni().length > 1">
+                    <button class="btn btn-danger centered" type="button" (click)="eliminaTutte()">Elimina
+                        Tutte</button>
+                </div>
+            </div>
+            <div formArrayName="istruzioni">
+                <div *ngFor="let esperienza of getIstruzioni(); let i = index" [formGroupName]="i" class="f-group">
+                    <div class="form-group">
+                        <label for="titolo">Istruzione
+                            <span class="help-block destra"
+                                *ngIf="getIstruzioni()[i].get('titolo').invalid && getIstruzioni()[i].get('titolo').touched">
+                                Inserisci la tua istruzione!
+                            </span>
+                        </label>
+                        <input type="text" class="form-control" formControlName="titolo">
+                    </div>
+                    <div class="form-group">
+                        <label for="presso">Istituto/Azienda
+                            <span class="help-block destra"
+                                *ngIf="getIstruzioni()[i].get('presso').invalid && getIstruzioni()[i].get('presso').touched">
+                                Inserisci il datore di lavoro!
+                            </span>
+                        </label>
+                        <input type="text" class="form-control" formControlName="presso">
+                    </div>
+                    <div class="form-group">
+                        <label for="desc">Descrizione
+                            <span class="help-block destra"
+                                *ngIf="getIstruzioni()[i].get('descrizione').invalid && getIstruzioni()[i].get('descrizione').touched">
+                                Inserisci una descrizione!
+                            </span>
+                        </label>
+                        <textarea class="form-control" rows="3" formControlName="descrizione"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataIn">Data di Inizio
+                            <span class="help-block destra"
+                                *ngIf="getIstruzioni()[i].get('dataInizio').invalid && getIstruzioni()[i].get('dataInizio').touched">
+                                Inserisci quando hai iniziato!
+                            </span>
+                        </label>
+                        <input type="date" class="form-control" formControlName="dataInizio">
+                    </div>
+                    <div class="form-group">
+                        <label for="dataFin">Data di Fine</label>
+                        <input type="date" class="form-control" formControlName="dataFine"
+                            (change)="onDataFineChange(i)">
+                    </div>
+                    <div class="form-group form-check">
+                        <label>Lavoro/Studio ancora qui</label>
+                        <input type="checkbox" (click)="adOggi(i)" class="form-check-input" style="margin-left: 0.5vw;"
+                            [checked]="adOggiCheck[i]">
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <button class="btn btn-success centered" type="submit"
+                                [disabled]="getIstruzioni()[i].invalid" (click)="inviaSingola(i)">Invia</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-secondary centered" type="button"
+                                (click)="resettaForm(i)">Svuota</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-danger centered" type="button"
+                                (click)="eliminaIstruzione(i)">Elimina</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

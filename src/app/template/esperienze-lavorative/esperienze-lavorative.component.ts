@@ -10,33 +10,10 @@ import { EsperienzaLavorativa } from './esperienzaLavorativa.model';
 export class EsperienzeLavorativeComponent implements OnInit {
 
   esperienze: EsperienzaLavorativa[]
-  // = [
-  //   {
-  //     dataInizio: new Date(),
-  //     dataFine: 'Ad oggi',
-  //     titolo: 'Esperienza 1',
-  //     datoreLavoro: 'Datore 1',
-  //     descrizione: 'Descrizione 1'
-  //   },
-  //   {
-  //     dataInizio: new Date(),
-  //     dataFine: new Date(),
-  //     titolo: 'Esperienza 2',
-  //     datoreLavoro: 'Datore 2ts',
-  //     descrizione: 'Descrizione 2'
-  //   },
-  // ]
 
   constructor(private esperienzeService: EsperienzeService) { }
 
   ngOnInit(): void {
-    // this.esperienzeService.submitEsperienze.subscribe((esperienze: EsperienzaLavorativa[]) => {
-    //   console.log(esperienze)
-    //   this.esperienze = esperienze
-    // })
-    // this.esperienzeService.eliminaEsperienze.subscribe((id: number) => {
-    //   this.esperienze.splice(id, 1)
-    // })
     this.esperienze = this.esperienzeService.esperienze
     this.esperienzeService.aggiornaEsperienze.subscribe((esperienze: EsperienzaLavorativa[]) => {
       this.esperienze = esperienze
