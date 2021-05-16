@@ -1,6 +1,5 @@
 .row {
     height: 83vh;
-    overflow-y: auto;
     background-color: white;
     border-radius: 15%;
     width: 80vh;
@@ -9,7 +8,9 @@
 }
 
 form  {
-    height: 50vh;
+    height: 65vh;
+    overflow-y: auto;
+    width: 30vw;
 }
 
 input.ng-invalid.ng-touched {

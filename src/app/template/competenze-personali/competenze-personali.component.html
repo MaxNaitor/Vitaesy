@@ -5,37 +5,33 @@
             <h5>Lingua Madre:</h5>
         </div>
         <div class="col-md-8">
-            <h5>Italiano</h5>
+            <h5>{{competenze.linguaMadre}}</h5>
         </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="competenze.lingueStraniere.length > 0">
         <div class="col-md-3">
             <h5>Lingue Straniere:</h5>
         </div>
         <div class="col-md-8">
-            <!-- array di lingue -->
-            <h5>Inglese</h5>
-            <p>Ascolto: C1 - Lettura: C1 - Parlato: B2</p>
-            <h5>Francese</h5>
-            <p>Ascolto: A1 - Lettura: C1 - Parlato: B2</p>
-            <p>A: Base - B: Autonomo - C: Avanzato</p>
+            <div *ngFor="let lingua of competenze.lingueStraniere">
+                <h5>{{lingua.lingua}}</h5>
+                <p>Ascolto: {{lingua.ascolto}} - Lettura: {{lingua.lettura}} - Parlato: {{lingua.parlato}}</p>
+            </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="competenze.competenze.length > 0">
         <div class="col-md-3">
             <h5>Competenze:</h5>
         </div>
         <div class="col-md-8">
-            <!-- array di competenze -->
-            <h5>- Comunicazione</h5>
-            <h5>- Problem solving</h5>
+            <h5 *ngFor="let comp of competenze.competenze">- {{comp}}</h5>
         </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="competenze.patenti.length > 0">
         <div class="col-md-3">
-            <h5>Patente di guida:</h5>
+            <h5>Patenti di guida:</h5>
         </div>
         <div class="col-md-8">
-            <h5>B</h5>
+            <h5 *ngFor="let patente of competenze.patenti">{{patente}}</h5>
         </div>
     </div>
