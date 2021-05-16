@@ -44,3 +44,7 @@ textarea.ng-invalid.ng-touched {
 .row {
     margin-top: 1vh;
 }
+
+.pulsantiera {
+    height: 3.5vw;
+}
