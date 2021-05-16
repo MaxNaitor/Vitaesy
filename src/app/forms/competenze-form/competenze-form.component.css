@@ -10,8 +10,19 @@
 
 form  {
     height: 50vh;
+    width: 30vw;
 }
 
 input.ng-invalid.ng-touched, select.ng-invalid.ng-touched {
     border: 1px solid red;
+}
+
+.addButton {
+    margin-left: 2vw;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+}
+
+select {
+    width: 70vw;
 }

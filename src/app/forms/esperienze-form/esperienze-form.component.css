@@ -1,8 +1,6 @@
 
 .f-group {
-    margin-top: 1vh;
     margin-bottom: 2vh;
-    border: 2px solid darkblue;
     padding: 4vw;
     border-radius: 15%;
     background-color: white;
@@ -41,4 +39,8 @@ textarea.ng-invalid.ng-touched {
 .destra {
     color: red;
     margin-left: 2vw;
+}
+
+.row {
+    margin-top: 1vh;
 }

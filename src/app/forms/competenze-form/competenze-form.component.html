@@ -11,8 +11,8 @@
             </div>
             <div formArrayName="lingueStraniere">
                 <label for="">Lingue Straniere</label>
-                <button class="btn btn-primary" style="margin-left: 2vw; margin-bottom: 1vh; margin-top: 1vh;"
-                    (click)="aggiungiLingua(null,null,null,null)">Aggiungi Lingua</button>
+                <button class="btn btn-primary addButton" (click)="aggiungiLingua(null,null,null,null)">Aggiungi
+                    Lingua</button>
                 <div *ngFor="let lingua of getLingueStraniere(); let i = index" [formGroupName]="i" class="f-group">
                     <span *ngIf="lingua.invalid && lingua.touched">
                         La lingua non è stata compilata correttamente!
@@ -52,8 +52,8 @@
 
             <div formArrayName="competenze">
                 <label for="">Competenze</label>
-                <button class="btn btn-primary" style="margin-left: 2vw; margin-bottom: 1vh; margin-top: 1vh;"
-                    (click)="aggiungiCompetenza(null)">Aggiungi Competenza</button>
+                <button class="btn btn-primary addButton" (click)="aggiungiCompetenza(null)">Aggiungi
+                    Competenza</button>
                 <div *ngFor="let comp of getCompetenze(); let i = index" class="f-group">
                     <span *ngIf="comp.invalid && comp.touched">
                         Specifica la competenza!
@@ -68,8 +68,7 @@
             </div>
             <div formArrayName="patenti">
                 <label for="">Patenti</label>
-                <button class="btn btn-primary" style="margin-left: 2vw; margin-bottom: 1vh; margin-top: 1vh;"
-                    (click)="aggiungiPatente(null)">Aggiungi Patente</button>
+                <button class="btn btn-primary addButton" (click)="aggiungiPatente(null)">Aggiungi Patente</button>
                 <div *ngFor="let patente of getPatenti(); let i = index" class="f-group">
                     <span *ngIf="patente.invalid && patente.touched">
                         Specifica la patente!
