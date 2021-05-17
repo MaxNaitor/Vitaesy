@@ -34,7 +34,6 @@ export class InfoFormComponent implements OnInit {
 
   mostraImg(event) {
     this.imgInserita = true
-    console.log(this.imgInserita)
     const file = (event.target as HTMLInputElement).files[0];
     this.uploadForm.patchValue({
       avatar: file
@@ -44,7 +43,6 @@ export class InfoFormComponent implements OnInit {
   }
 
   onSubmit() {
-    alert('GESTISCI IMMAGINE PER METTERLA REQUIRED')
     const info = {
       'nome': this.infoForm.get('nome').value,
       'cognome': this.infoForm.get('cognome').value,
