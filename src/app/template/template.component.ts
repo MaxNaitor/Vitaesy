@@ -29,7 +29,7 @@ export class TemplateComponent implements OnInit {
     html2canvas(data, { allowTaint: true }).then(canvas => {
       let HTML_Width = canvas.width;
       let HTML_Height = canvas.height;
-      let top_left_margin = 15;
+      let top_left_margin = 0;
       let PDF_Width = HTML_Width + (top_left_margin * 2);
       let PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
       let canvas_image_width = HTML_Width;
