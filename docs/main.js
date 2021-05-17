@@ -1411,7 +1411,7 @@ class FooterComponent {
     }
 }
 FooterComponent.ɵfac = function FooterComponent_Factory(t) { return new (t || FooterComponent)(); };
-FooterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: FooterComponent, selectors: [["app-footer"]], decls: 7, vars: 0, consts: [[1, "row", "no-gutters"], [1, "col-sm-1"], ["href", "https://github.com/MaxNaitor", "target", "_blank"], ["src", "../../assets/github.png"], ["href", "https://www.linkedin.com/in/tiziano-massa-061151158/", "target", "_blank"], ["src", "../../assets/linkedin.png"]], template: function FooterComponent_Template(rf, ctx) { if (rf & 1) {
+FooterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: FooterComponent, selectors: [["app-footer"]], decls: 7, vars: 0, consts: [[1, "row", "no-gutters"], [1, "col-sm-1"], ["href", "https://github.com/MaxNaitor", "target", "_blank"], ["src", "assets/github.png"], ["href", "https://www.linkedin.com/in/tiziano-massa-061151158/", "target", "_blank"], ["src", "assets/linkedin.png"]], template: function FooterComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 2);
